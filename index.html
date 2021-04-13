@@ -8,7 +8,13 @@
 			{
 				var theImage = document.getElementById('myimage');
 				var imgDir = 'images/';
-				var imgArray = new Array('29.jpg','30.jpg','31.jpg','32.jpg','33.jpg');
+				var imgStart = 29;
+				var imgEnd = 58;
+				var imgArray = [];
+				for (var i= imgStart; i<imgEnd; i++) 
+				{
+					imgArray.push(i+'.jpg');
+				}
 				var imgIndex = 0;
 				
 				if(imgArray.length > 1)
@@ -32,6 +38,8 @@
 		</script>
 	</head>
 	<body onload="randomImage()">
-			<img id="myimage">
+		<p>
+			<img id="myimage" />
+		</p>
 	</body>
 </html>
