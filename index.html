@@ -1,23 +1,20 @@
-<!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Display A Random Image Via JavaScript / DOM</title>
+		<script type="text/javascript">
 			var lastIndex = 0;
-			
-			function randomImage() {
+			function randomImage()
+			{
 				var theImage = document.getElementById('myimage');
 				var imgDir = 'images/';
-				var imgstart = 29;
-				var imgEnd = 58;
-				var imgArray = [];
-				for (var i= imgStart; i<imgArray; i++) 
-				{
-					imgArray.push('${i}.jpg');
-				}
+				var imgArray = new Array('29.jpg','30.jpg','31.jpg','32.jpg','33.jpg');
 				var imgIndex = 0;
 				
-				if(imgArray.length > 1) {
-					while(imgIndex == lastIndex) {
+				if(imgArray.length > 1)
+				{
+					while(imgIndex == lastIndex) 
+					{
 						imgIndex = Math.floor(Math.random() * imgArray.length);
 					}
 					lastIndex = imgIndex;
@@ -27,15 +24,14 @@
 					theImage.src = imgPath;
 					theImage.alt = imgArray[imgIndex];
 				}
-				else {
+				else 
+				{
 					return false;
 				}
 			}
-</script>
-</head>
-
-<body onload="randomImage()>
-<p><a href="#" onclick="randomImage()"><img id="myimage" /></a>
-</p>
-</body>
+		</script>
+	</head>
+	<body onload="randomImage()">
+			<img id="myimage">
+	</body>
 </html>
